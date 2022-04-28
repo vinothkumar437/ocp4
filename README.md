@@ -13,7 +13,7 @@ https://access.redhat.com/solutions/5564771
 https://access.redhat.com/solutions/5514051
 
 <pre>$ export CLUSTERDOMAINAPI=api-int.clusterDomain:22623</pre>
-<pre>
+<pre><code>
 #!/bin/sh
 mkdir -p /tmp/scaleup; cd /tmp/scaleup 
 cat <<EOF >>worker.ign
@@ -22,6 +22,6 @@ EOF
 sed -i "s%CLUSTERDOMAINAPI%$CLUSTERDOMAINAPI%" worker.ign 
 echo "q" | openssl s_client -connect $CLUSTERDOMAINAPI -showcerts | awk '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/' | base64 --wrap=0 | tee ./api-int.base64
 sed --regexp-extended --in-place='' "s%CERTinBASE64%$(cat ./api-int.base64)%" worker.ign
-</pre>
+</code></pre>
 
 
