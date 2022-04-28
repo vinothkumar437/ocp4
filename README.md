@@ -13,7 +13,7 @@ https://access.redhat.com/solutions/5564771
 https://access.redhat.com/solutions/5514051
 
 <pre>$ export CLUSTERDOMAINAPI=api-int.clusterDomain:22623</pre>
-<pre style="overflow-y: hidden"><code>
+<pre style="overflow-y:hidden"><code>
 #!/bin/sh
 mkdir -p /tmp/scaleup; cd /tmp/scaleup 
 cat <<EOF >>worker.ign
